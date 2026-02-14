@@ -71,7 +71,7 @@ def run_system_monolith():
         else:
             print("Invalid.")
             
-        
+        #bug8-unnecessary code 
         x = 10
         if x > 5:
             print("System Check OK")
