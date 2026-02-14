@@ -41,7 +41,7 @@ def run_system_monolith():
             n.append(new_name)
             r.append(new_rank)
             d.append(new_div)
-            
+
             print("Crew member added.")
 
         elif opt == "3":
@@ -58,7 +58,9 @@ def run_system_monolith():
             count = 0
             #bug 3 -printing str+int is incorrect - type error
             for rank in r:
-                if rank == "Captain" or "Commander": 
+
+                #bug7-syntax error of comparing two values 
+                if rank == "Captain" or rank == "Commander": 
                     count = count + 1
             print("High ranking officers: " , count) 
             
