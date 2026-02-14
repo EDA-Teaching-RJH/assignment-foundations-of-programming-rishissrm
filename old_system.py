@@ -84,7 +84,7 @@ def run_system_monolith():
         if len(n) == 0:
             print("Database empty.")
 
-        
+        #bug 9 unnecesary block of code
         fuel = 100
         consumption = 0
         while fuel > 0:
