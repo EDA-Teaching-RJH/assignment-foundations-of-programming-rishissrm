@@ -88,5 +88,5 @@ def run_system_monolith():
             break 
             
         print("End of cycle.")
-
-run_system_monolith
+#bug5-calling the function missing brackets
+run_system_monolith()
