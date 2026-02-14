@@ -53,11 +53,11 @@ def run_system_monolith():
         elif opt == "4":
             print("Analyzing...")
             count = 0
-            
+            #bug 3 -printing str+int is incorrect - type error
             for rank in r:
                 if rank == "Captain" or "Commander": 
                     count = count + 1
-            print("High ranking officers: " + count) 
+            print("High ranking officers: " , count) 
             
         elif opt == "5":
             print("Shutting down.")
