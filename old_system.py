@@ -37,10 +37,13 @@ def run_system_monolith():
             new_rank = input("Rank: ")
             new_div = input("Division: ")
             
-           
+           #bug 6-division and rank details are not added to the list
             n.append(new_name)
-            print("Crew member added.")
+            r.append(new_rank)
+            d.append(new_div)
             
+            print("Crew member added.")
+
         elif opt == "3":
             rem = input("Name to remove: ")
            
