@@ -57,6 +57,27 @@ def add_member(names,ranks,divs,ids):
 
     print("Member successfully added!!!")
 
+#Function to remove a member from the list
+def remove_member(names,ranks,divs,ids):
+    print("******Remove Member*********")
+
+    rem_id=input("Enter ID to remove: ")
+    if rem_id not in ids:
+        print("ID not found, Nothing removed")
+        return
+
+    idx=ids.index(rem_id)
+
+    #remove from all the lists
+    print("Removing: ", names[idx])
+    ids.pop(idx)
+    names.pop(idx)
+    ranks.pop(idx)
+    divs.pop(idx)
+
+    print("Successfully Removed.")
+
+
 def main():
     Names,Ranks,Divisions,IDs=init_database()
 
@@ -68,6 +89,9 @@ def main():
 
         elif choice == "2":
             add_member(Names,Ranks,Divisions,IDs)
+
+        elif choice == "3":
+            remove_member(Names,Ranks,Divisions,IDs)
 
         else:
             print("invaild options")
