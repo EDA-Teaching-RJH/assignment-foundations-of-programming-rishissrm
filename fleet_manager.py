@@ -135,6 +135,26 @@ def filter_by_division(names,divs):
     if found == False:
         print("Sorry!!! No crew in that division.")
 
+#Calculating the payroll
+def calculate_payroll(ranks):
+    print("*******Calculating Payroll!!********")
+
+    total = 0
+
+    for r in ranks:
+        if r=="Captain":
+            total = total+1000
+        elif r=="Commander":
+            total = total+800
+        elif r=="Lt. Commander":
+            total=total+650
+        elif r=="Lieutenant":
+            total=total+500
+        else:
+           total = total+0
+
+    return total
+
 
 def main():
     Names,Ranks,Divisions,IDs=init_database()
@@ -159,6 +179,10 @@ def main():
 
         elif choice == "6":
             filter_by_division(Names,Divisions)
+
+        elif choice == "7":
+            total = calculate_payroll(Ranks)
+            print("Total Payroll Amount :" ,total)
 
         else:
             print("invaild options")
