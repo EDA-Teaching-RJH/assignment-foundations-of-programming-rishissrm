@@ -77,6 +77,7 @@ def remove_member(names,ranks,divs,ids):
 
     print("Successfully Removed.")
 
+#Function to update the rank
 
 def update_rank(names,ranks,ids):
     print("*****Update Rank******")
