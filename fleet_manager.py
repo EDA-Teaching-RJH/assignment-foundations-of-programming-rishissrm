@@ -78,6 +78,27 @@ def remove_member(names,ranks,divs,ids):
     print("Successfully Removed.")
 
 
+def update_rank(names,ranks,ids):
+    print("*****Update Rank******")
+    target_id = input("Enter ID to update rank: ")
+
+    if target_id not in ids:
+        print("ID not found.")
+        return
+
+    idx=ids.index(target_id)
+    
+    new_rank = input("Enter new rank (Captain, Commander, Lt. Commander, Lieutenant)")
+    
+    valid_ranks=["Captain", "Commander", "Lt. Commander", "Lieutenant"]
+    if new_rank not in valid_ranks:
+        print("invalid rank. Not updated")
+        return
+
+    ranks[idx]=new_rank
+    print("Rank Updated!!")
+
+
 def main():
     Names,Ranks,Divisions,IDs=init_database()
 
@@ -92,6 +113,9 @@ def main():
 
         elif choice == "3":
             remove_member(Names,Ranks,Divisions,IDs)
+        
+        elif choice == "4":
+            update_rank(Names,Ranks,IDs)
 
         else:
             print("invaild options")
