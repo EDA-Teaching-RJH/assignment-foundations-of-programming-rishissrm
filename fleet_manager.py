@@ -115,6 +115,26 @@ def search_crew(names,ranks,divs,ids):
     if found == False:
         print("Sorry!! Unable to found the member!!")
 
+#Function to filter names by division
+def filter_by_division(names,divs):
+    print("*********Filter by Division*********")
+
+    division = input("Enter division(Command/Operations/Security: )")
+
+    valid_divs = ["Command", "Command", "Operations", "Security"]
+    if division not in valid_divs:
+        print("Sorry!! Invalid Division!!")
+        return
+
+    found = False
+    for i in range(len(names)):
+        if divs[i] == division:
+            print(names[i])
+            found = True
+
+    if found == False:
+        print("Sorry!!! No crew in that division.")
+
 
 def main():
     Names,Ranks,Divisions,IDs=init_database()
@@ -136,6 +156,9 @@ def main():
 
         elif choice == "5":
             search_crew(Names,Ranks,Divisions,IDs)
+
+        elif choice == "6":
+            filter_by_division(Names,Divisions)
 
         else:
             print("invaild options")
