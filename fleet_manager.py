@@ -99,6 +99,22 @@ def update_rank(names,ranks,ids):
     ranks[idx]=new_rank
     print("Rank Updated!!")
 
+#Function to search a crew member from the list
+def search_crew(names,ranks,divs,ids):
+    print("*******Search Crew********")
+
+    name_search = input("Enter a name to search: ")
+
+    found = False
+    for i in range(len(names)):
+        if name_search in names[i]:
+            print("I found the crew member!!")
+            print(ids[i],names[i],ranks[i],divs[i])
+            found=True
+
+    if found == False:
+        print("Sorry!! Unable to found the member!!")
+
 
 def main():
     Names,Ranks,Divisions,IDs=init_database()
@@ -117,6 +133,9 @@ def main():
         
         elif choice == "4":
             update_rank(Names,Ranks,IDs)
+
+        elif choice == "5":
+            search_crew(Names,Ranks,Divisions,IDs)
 
         else:
             print("invaild options")
