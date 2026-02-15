@@ -27,7 +27,7 @@ def display_menu():
     choice = input("Choose an option:")
     return choice
 
-
+# Function to display the data of all the crew members
 def display_roaster(names,ranks,divs,ids):
     print ("current crew memebers")
     if len(names)==0:
@@ -35,6 +35,27 @@ def display_roaster(names,ranks,divs,ids):
         return
     for i in range(len(names)):
         print(ids[i],names[i],ranks[i],divs[i])
+
+def add_member(names,ranks,divs,ids):
+    print("*****Add Member********")
+    new_id =input("Enter ID: ")
+
+    #check unique ID
+    if new_id in ids:
+        print("That ID already exists.Please input other ID : ")
+        return
+
+    new_name = input("Enter name: ")
+    new_rank = input("Enter rank (Captain, Commander, Lt. Commander, Lieutenant):")
+    new_div = input("Enter Division (Command, Operations, Security)")
+
+    #add to all lists
+    ids.append(new_id)
+    names.append(new_name)
+    ranks.append(new_rank)
+    divs.append(new_div)
+
+    print("Member successfully added!!!")
 
 def main():
     Names,Ranks,Divisions,IDs=init_database()
@@ -44,6 +65,10 @@ def main():
 
         if choice == "1":
             display_roaster(Names,Ranks,Divisions,IDs)
+
+        elif choice == "2":
+            add_member(Names,Ranks,Divisions,IDs)
+
         else:
             print("invaild options")
 
