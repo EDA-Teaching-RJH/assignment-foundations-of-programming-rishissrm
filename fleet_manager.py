@@ -155,6 +155,15 @@ def calculate_payroll(ranks):
 
     return total
 
+#Function to count captains and commanders in the list
+def count_officers(ranks):
+    print("Counting officers : ")
+
+    count = 0
+    for r in ranks:
+        if r == "Captain" or r == "Commander":
+            count = count+1
+    return count
 
 def main():
     Names,Ranks,Divisions,IDs=init_database()
@@ -183,6 +192,10 @@ def main():
         elif choice == "7":
             total = calculate_payroll(Ranks)
             print("Total Payroll Amount :" ,total)
+
+        elif choice == "8":
+            num = count_officers(Ranks)
+            print("Total Captains and Commanders in the Crew :" ,num)
 
         else:
             print("invaild options")
