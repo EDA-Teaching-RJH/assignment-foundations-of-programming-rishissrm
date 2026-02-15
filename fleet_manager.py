@@ -24,7 +24,27 @@ def display_menu():
     print("8.Count Officers")
     print("9.Exit")
 
-    choice = input("Choose an option: ")
+    choice = input("Choose an option:")
+    return choice
 
-display_menu()
 
+def display_roaster(names,ranks,divs,ids):
+    print ("current crew memebers")
+    if len(names)==0:
+        print("no crew members in data base")
+        return
+    for i in range(len(names)):
+        print(ids[i],names[i],ranks[i],divs[i])
+
+def main():
+    Names,Ranks,Divisions,IDs=init_database()
+
+    while True:
+        choice=display_menu()
+
+        if choice == "1":
+            display_roaster(Names,Ranks,Divisions,IDs)
+        else:
+            print("invaild options")
+
+main()
