@@ -196,7 +196,9 @@ def main():
         elif choice == "8":
             num = count_officers(Ranks)
             print("Total Captains and Commanders in the Crew :" ,num)
-
+        
+        elif choice == "9":
+            print("Thank you!! Existing the program!! See you soon!!")
         else:
             print("invaild options")
 
